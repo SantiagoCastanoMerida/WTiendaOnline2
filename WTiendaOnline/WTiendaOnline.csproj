@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D48D853-1149-4E3E-A04C-A326C43B6A6C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WTiendaOnline</RootNamespace>
+    <AssemblyName>WTiendaOnline</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConexionBd.cs" />
+    <Compile Include="Services\CrearProductoBd.cs" />
+    <Compile Include="Services\CrearUsuariosBd.cs" />
+    <Compile Include="Services\ModificarProductoBd.cs" />
+    <Compile Include="Services\ModificarUsuarioBd.cs" />
+    <Compile Include="Services\ObtenerProductosBd.cs" />
+    <Compile Include="Services\ObtenerUsuarioBd.cs" />
+    <Compile Include="UI\AgregarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CarritoDeCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CarritoDeCompras.Designer.cs">
+      <DependentUpon>CarritoDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Contactanos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Contactanos.Designer.cs">
+      <DependentUpon>Contactanos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeaderLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HeaderLogin.Designer.cs">
+      <DependentUpon>HeaderLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeaderTienda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HeaderTienda.Designer.cs">
+      <DependentUpon>HeaderTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ModificarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ModificarProducto.Designer.cs">
+      <DependentUpon>ModificarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ModificarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProductoBajoStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ProductoBajoStock.Designer.cs">
+      <DependentUpon>ProductoBajoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProductoEnCarrito.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ProductoEnCarrito.Designer.cs">
+      <DependentUpon>ProductoEnCarrito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProductoSelecionado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ProductoSelecionado.Designer.cs">
+      <DependentUpon>ProductoSelecionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Productos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RecuadroProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RecuadroProducto.Designer.cs">
+      <DependentUpon>RecuadroProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\GlobalClienteEmail.cs" />
+    <Compile Include="Utils\GlobalProductoId.cs" />
+    <Compile Include="Utils\GlobalStock.cs" />
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CarritoDeCompras.resx">
+      <DependentUpon>CarritoDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Contactanos.resx">
+      <DependentUpon>Contactanos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeaderLogin.resx">
+      <DependentUpon>HeaderLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeaderTienda.resx">
+      <DependentUpon>HeaderTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ModificarProducto.resx">
+      <DependentUpon>ModificarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProductoBajoStock.resx">
+      <DependentUpon>ProductoBajoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProductoEnCarrito.resx">
+      <DependentUpon>ProductoEnCarrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProductoSelecionado.resx">
+      <DependentUpon>ProductoSelecionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RecuadroProducto.resx">
+      <DependentUpon>RecuadroProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1077114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo prueba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen Prueba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen Prueba 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Clic&amp;Shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Clic&amp;Shop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Logo-Clic_Shop.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
